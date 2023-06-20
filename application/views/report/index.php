@@ -41,7 +41,7 @@
                         <br>
                         <br>
                         <div class="row">
-                            <div class="col-md-3">
+                            <div class="col-md-5">
                                 <label class="form-label">Filter Bulan Tahun</label>
                                 <input type="month" class="form-control" value="" name="dariBulan">
                                 <input type="month" class="form-control" value="" name="keBulan">
