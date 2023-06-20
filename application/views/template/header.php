@@ -52,7 +52,7 @@
             <div class="navbar-content scroll-div ">
                 <ul class="nav pcoded-inner-navbar ">
                     <li class="nav-item pcoded-menu-caption">
-                        <label>Navigation</label>
+                        <label>Navigasi</label>
                     </li>
                     <li class="nav-item">
                         <a href="<?= base_url() ?>dashboard" class="nav-link "><span class="pcoded-micon"><i class="feather icon-home"></i></span><span class="pcoded-mtext">Dashboard</span></a>
@@ -69,10 +69,10 @@
                         <a href="<?= base_url() ?>pengeluaran" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Pengeluaran</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url() ?>report" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Report</span></a>
+                        <a href="<?= base_url() ?>report" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Laporan</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url() ?>setting" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Setting</span></a>
+                        <a href="<?= base_url() ?>setting" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Pengaturan</span></a>
                     </li>
                 </ul>
             </div>

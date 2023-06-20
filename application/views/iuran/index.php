@@ -97,7 +97,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>List Iuran Warga</h5>
+                        <h5>Iuran Warga</h5>
                         <button type="button" class="float-right btn btn-primary btn btn-primary float-right mb-2" onclick="add()">
                             Tambah Data
                         </button>

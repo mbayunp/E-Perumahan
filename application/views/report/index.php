@@ -17,13 +17,13 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Report Iuran dan Pengeluaran RT</h5>
+                            <h5 class="m-b-10">Laporan Iuran dan Pengeluaran RT</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="feather icon-home"></i>
                                     Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#!">Report Iuran dan Pengeluaran RT</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Laporan Iuran dan Pengeluaran RT</a></li>
                         </ul>
                     </div>
                 </div>
@@ -37,7 +37,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>Report</h5>
+                        <h5>Laporan</h5>
                         <br>
                         <br>
                         <div class="row">

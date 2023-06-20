@@ -28,7 +28,7 @@
                                 <input type="text" class="form-control" value="" name="nama">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Type</label>
+                                <label class="form-label">Tipe</label>
                                 <input type="text" class="form-control" value="" name="type" disabled>
                             </div>
                         </form>
@@ -55,13 +55,13 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Data Setting Website</h5>
+                            <h5 class="m-b-10">Data Pangaturan</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="feather icon-home"></i>
                                     Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#!">Data Setting Website</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Data Pangaturan</a></li>
                         </ul>
                     </div>
                 </div>
@@ -75,7 +75,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>List Data Setting Website</h5>
+                        <h5>Data Pangaturan</h5>
                     </div>
                     <div class="card-body table-responsive">
                         <div class="tabel"></div>
@@ -108,8 +108,8 @@
             $('#formModal')[0].reset();
             $('[name=type_save]').val('edit');
             $('#exampleModal').modal('show');
-            $('.modal-title').text('Ubah Data Setting');
-            $('#btnSave').text('Ubah Data Setting');
+            $('.modal-title').text('Ubah Data Pengaturan');
+            $('#btnSave').text('Ubah Data Pengaturan');
             $.ajax({
                 url: "<?= base_url('setting/edit/') ?>" + id,
                 type: "POST",

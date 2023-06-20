@@ -41,7 +41,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">Sisa Budget Iuran Warga</label>
+                                <label class="form-label">Sisa Iuran Warga</label>
                                 <input type="text" class="form-control" value="" name="sisa" placeholder="" readonly>
                             </div>
                         </form>
@@ -87,7 +87,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>List Data Pengeluaran</h5>
+                        <h5>Data Pengeluaran</h5>
                         <button type="button" class="float-right btn btn-primary btn btn-primary float-right mb-2" onclick="add()">
                             Tambah Data
                         </button>

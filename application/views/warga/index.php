@@ -98,7 +98,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>List Data Warga</h5>
+                        <h5>Data Warga</h5>
                         <button type="button" class="float-right btn btn-primary btn btn-primary float-right mb-2" onclick="add()">
                             Tambah Data
                         </button>
