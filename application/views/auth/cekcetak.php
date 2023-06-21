@@ -13,7 +13,7 @@
     <!-- <link rel="preconnect" href="https://fonts.gstatic.com"> -->
     <link rel="shortcut icon" href="img/icons/icon-48x48.png" />
 
-    <title>Sistem Informasi Perumahan Cipadung Permai</title>
+    <title>Sistem Informasi Perumahan villa Indah Ciwidey</title>
 
     <link href="<?= base_url('assets/static/') ?>css/app.css" rel="stylesheet">
     <link href="<?= base_url('assets/') ?>js/sweetalert2.min.css" rel="stylesheet">
@@ -44,9 +44,9 @@
                     <div class="d-table-cell align-middle">
 
                         <div class="text-center mt-4">
-                            <h1 class="h2">Sistem Informasi Perumahan Cipadung Permai</h1>
+                            <h1 class="h2">Sistem Informasi Perumahan Villa Indah Ciwidey</h1>
                             <p class="lead">
-                                Cetak Bukti Pembayaran Iuran Bulanan <b>RT 011 RW 01</b>
+                                Cetak Bukti Pembayaran Iuran Bulanan <b>RT 03 RW 03</b>
                             </p>
                         </div>
 
@@ -80,7 +80,7 @@
                         <div class="card mt-4">
     <div class="card-body">
         <div class="text-center">
-            <h5>Hubungi Call Center melalui WhatsApp</h5>
+            <h5>Hubungi Narahubung melalui WhatsApp</h5>
             <p>
                 <a href="https://api.whatsapp.com/send?phone=0895422683275" target="_blank" class="btn btn-success btn-lg">
                     <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6b/WhatsApp.svg/2044px-WhatsApp.svg.png" alt="WhatsApp Logo" class="whatsapp-logo">

@@ -66,7 +66,7 @@
                                 <div class="col-8">
                                     <h4 class="text-c-black">keterangan</h4>
                                     <br>
-                                    <p class="text-c-black">1. Iuran dibayar oleh warga satu bulan sekali setiap tanggal 10</p>
+                                    <p class="text-c-black">1. Iuran dibayar oleh warga satu bulan sekali</p>
                                     <p class="text-c-black">2. Besar uang iuran adalah 65000, dengan rincian :</p>
                                     <p class="text-c-black">a. Uang Iuran dibayar sampah : 25000</p>
                                     <p class="text-c-black">b. Uang Iuran keamanan : 40000</p>

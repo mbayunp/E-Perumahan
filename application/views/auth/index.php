@@ -43,7 +43,7 @@
                     <h1 class="lead" id="current-time">Waktu saat ini: </h1>
                         <h3 class="lead">
                         <b><h1 class="h1">SELAMAT DATANG</h1><b>
-                            Sistem Informasi Perumahan Cipadung <b>RT 011 RW 01</b>
+                            Sistem Informasi Perumahan Villa Indah Ciwidey <b>RT 03 RW 03</b>
     </h3>
                     </div>
 
@@ -76,12 +76,12 @@
                                     </div>
                                     <form action="<?= base_url() ?>auth/process" method="post">
                                         <div class="mb-3">
-                                            <label class="form-label">Username</label>
+                                            <label class="form-label">Nama Pengguna</label>
                                             <input class="form-control form-control-lg" name="user"
                                                 placeholder="Enter your username" />
                                         </div>
                                         <div class="mb-3">
-                                            <label class="form-label">Password</label>
+                                            <label class="form-label">Kata Sandi</label>
                                             <input class="form-control form-control-lg" type="password" name="pasword"
                                                 placeholder="Enter your password" />
 
@@ -89,7 +89,7 @@
                                         <div class=" mt-3">
                                             <!-- <a href="index.html" class="btn btn-lg btn-primary">Sign in</a> -->
                                             <button type="submit" name="login"
-                                                class="btn btn-lg btn-primary">Login</button>
+                                                class="btn btn-lg btn-primary">Masuk</button>
                                         </div>
                                     </form>
                                 </div>

@@ -30,7 +30,7 @@
         $bulan = bulan(substr($iuran_bulan, 5));
         $tahun = substr($iuran_bulan, 0, 4);
         ?>
-        <h4>SISTEM INFORMASI PEMBAYARAN IURAN KAS WARGA <br> RT 011 RW 01 KELURAHAN PEGANGSAAN KECAMATAN MENTENG JAKARTA
+        <h4>SISTEM INFORMASI PEMBAYARAN IURAN PERUMAHAN VILLA INDAH CIWIDEY<br> RT 03 RW 03 DESA PASIRJAMBU KEC. PASIRJAMBU
         </h4>
         <br>
         <p style="margin-top:-30px;margin-bottom:-30px;">
@@ -57,8 +57,8 @@
             </tr>
         </table>
         <br>
-        <p>Bukti cetak ini sah, dengan didownload diaplikasi sistem informasi iuran warga</p>
-        <p>Kontak Sekretaris RT: Susanto 085770893312</p>
+        <p>Bukti cetak ini sah, dengan didownload di aplikasi sistem informasi iuran warga Perumahan Villa Indah Ciwidey</p>
+        <p>Narahubung : Indah 0895-4226-83275</p>
 
 
     </div>
