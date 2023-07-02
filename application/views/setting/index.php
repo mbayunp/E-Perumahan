@@ -24,7 +24,7 @@
                             <input type="hidden" name="id" value="">
                             <input type="hidden" name="type_save" value="">
                             <div class="form-group">
-                                <label class="form-label">Nama</label>
+                                <label class="form-label">Nominal*</label>
                                 <input type="text" class="form-control" value="" name="nama">
                             </div>
                             <div class="form-group">

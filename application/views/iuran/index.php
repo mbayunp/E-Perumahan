@@ -25,7 +25,7 @@
 
 
                             <div class="form-group">
-                                <label class="form-label">Nama Warga</label>
+                                <label class="form-label">Nama Warga*</label>
                                 <select class="form-control" name="id_warga">
                                     <option value="">Pilih Nama Warga</option>
                                     <?php foreach ($nama_warga as $data) { ?>
@@ -35,7 +35,7 @@
                             </div>
 
                             <div class="form-group">
-                                <label class="form-label">Iuran Bulan</label>
+                                <label class="form-label">Iuran Bulan*</label>
                                 <input type="month" class="form-control" value="" name="iuran_bulan">
                             </div>
                             <div class="form-group">

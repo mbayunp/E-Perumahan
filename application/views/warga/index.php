@@ -24,27 +24,27 @@
                             <input type="hidden" name="type_save" value="">
 
                             <div class="form-group">
-                                <label class="form-label">NIK Kepala Keluarga</label>
+                                <label class="form-label">NIK Kepala Keluarga*</label>
                                 <input type="number" class="form-control" value="" name="nomor_nik_ktp" placeholder="contoh 458670932....">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Nama</label>
+                                <label class="form-label">Nama*</label>
                                 <input type="text" class="form-control" value="" name="nama">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Nomor Telepon</label>
+                                <label class="form-label">Nomor Telepon*</label>
                                 <input type="number" class="form-control" value="" name="nomor_telepon" placeholder="contoh 0857....">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Nomor Rumah</label>
+                                <label class="form-label">Nomor Rumah*</label>
                                 <input type="text" class="form-control" value="" name="nomor_rumah">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Alamat</label>
+                                <label class="form-label">Alamat*</label>
                                 <input type="text" class="form-control" value="" name="alamat">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Status Tinggal</label>
+                                <label class="form-label">Status Tinggal*</label>
                                 <select class="form-control" name="status_tinggal">
                                     <option value="">Pilih Status</option>
                                     <option value="1">Tetap</option>

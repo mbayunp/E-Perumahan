@@ -4,7 +4,7 @@
         <tr>
             <th>No</th>
             <th>Action</th>
-            <th>Nama</th>
+            <th>Nominal</th>
             <th>Type</th>
             <th>Update</th>
         </tr>
