@@ -15,13 +15,13 @@
                 <div class="row align-items-center">
                     <div class="col-md-12">
                         <div class="page-header-title">
-                            <h5 class="m-b-10">Bukti pengumpulan</h5>
+                            <h5 class="m-b-10">Bukti Pembayaran</h5>
                         </div>
                         <ul class="breadcrumb">
                             <li class="breadcrumb-item"><a href="<?= base_url() ?>"><i class="feather icon-home"></i>
                                     Dashboard</a>
                             </li>
-                            <li class="breadcrumb-item"><a href="#!">Bukti pengumpulan</a></li>
+                            <li class="breadcrumb-item"><a href="#!">Bukti Pembayaran</a></li>
                         </ul>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
                 <div class="card">
 
                     <div class="card-header">
-                        <h5>Bukti pengumpulan</h5>
+                        <h5>Bukti Pembayaran</h5>
                     </div>
                     <div class="card-body table-responsive">
                         <div class="tabel"></div>

@@ -74,11 +74,12 @@
                         <a href="<?= base_url() ?>report" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Laporan</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url() ?>setting" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Pengaturan</span></a>
+                        <a href="<?= base_url() ?>Bukti" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Bukti Pembayaran</span></a>
                     </li>
                     <li class="nav-item">
-                        <a href="<?= base_url() ?>Bukti" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Pengaturan</span></a>
+                        <a href="<?= base_url() ?>setting" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Pengaturan</span></a>
                     </li>
+                    
                 </ul>
             </div>
         </div>
