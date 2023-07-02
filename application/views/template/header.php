@@ -27,7 +27,9 @@
     <script src="<?= base_url() ?>assets/js/ripple.js"></script>
     <script src="<?= base_url() ?>assets/js/pcoded.min.js"></script>
 
-    <link href="<?= base_url('assets/') ?>js/sweetalert2.min.css" rel="stylesheet">
+    <link href="<?= base_url(
+        'assets/'
+    ) ?>js/sweetalert2.min.css" rel="stylesheet">
     <script src="<?= base_url('assets/') ?>js/sweetalert2.all.min.js"></script>
     <script src="<?= base_url('assets/') ?>js/jquery.validate.min.js"></script>
 
@@ -74,6 +76,9 @@
                     <li class="nav-item">
                         <a href="<?= base_url() ?>setting" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Pengaturan</span></a>
                     </li>
+                    <li class="nav-item">
+                        <a href="<?= base_url() ?>Bukti" class="nav-link "><span class="pcoded-micon"><i class="feather icon-bookmark"></i></span><span class="pcoded-mtext">Pengaturan</span></a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -107,7 +112,9 @@
                         <div class="dropdown-menu dropdown-menu-right profile-notification">
                             <div class="pro-head">
                                 <span>Admin</span>
-                                <a href="<?= base_url('auth/logout') ?>" class="dud-logout" title="Logout">
+                                <a href="<?= base_url(
+                                    'auth/logout'
+                                ) ?>" class="dud-logout" title="Logout">
                                     <i class="feather icon-log-out"></i>
                                 </a>
                             </div>

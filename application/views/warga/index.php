@@ -22,12 +22,9 @@
                         <form method="post" id="formModal" action="#" enctype="multipart/form-data">
                             <input type="hidden" name="id" value="">
                             <input type="hidden" name="type_save" value="">
+
                             <div class="form-group">
-                                <label class="form-label">Nomor Kartu Keluarga</label>
-                                <input type="number" class="form-control" value="" name="nomor_kk" placeholder="contoh 458670932....">
-                            </div>
-                            <div class="form-group">
-                                <label class="form-label">Nomor Nik KTP</label>
+                                <label class="form-label">NIK Kepala Keluarga</label>
                                 <input type="number" class="form-control" value="" name="nomor_nik_ktp" placeholder="contoh 458670932....">
                             </div>
                             <div class="form-group">
@@ -50,8 +47,8 @@
                                 <label class="form-label">Status Tinggal</label>
                                 <select class="form-control" name="status_tinggal">
                                     <option value="">Pilih Status</option>
-                                    <option value="1">Masih Jadi Warga</option>
-                                    <option value="2">Sudah Tidak Jadi Warga</option>
+                                    <option value="1">Tetap</option>
+                                    <option value="2">Ngontrak</option>
                                 </select>
                             </div>
 
@@ -155,7 +152,6 @@
                         $('[name=id]').val(data.id)
                         $('[name=nama]').val(data.nama)
                         $('[name=nomor_nik_ktp]').val(data.nomor_nik_ktp)
-                        $('[name=nomor_kk]').val(data.nomor_kk)
                         $('[name=nomor_telepon]').val(data.nomor_telepon)
                         $('[name=nomor_rumah]').val(data.nomor_rumah)
                         $('[name=alamat]').val(data.alamat)
@@ -179,10 +175,7 @@
                             required: true,
                             number: true,
                         },
-                        nomor_kk: {
-                            required: true,
-                            number: true,
-                        },
+
                         nomor_telepon: {
                             required: true,
                             number: true,

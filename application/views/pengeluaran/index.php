@@ -6,7 +6,6 @@
     }
 </style>
 
-
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
@@ -31,15 +30,21 @@
                                 <input type="text" class="form-control" value="" name="keterangan" placeholder="">
                             </div>
                             <div class="form-group">
-                                <label class="form-label">Nominal Pengeluaran</label>
-                                <input type="text" class="form-control" value="" name="nominal" placeholder="">
+                                <label class="form-label">harga satuan</label>
+                                <input type="text" class="form-control" value="" name="harga" placeholder="">
                             </div>
-
+                            <div class="form-group">
+                                <label class="form-label">jumlah</label>
+                                <input type="text" class="form-control" value="" name="jumlah" placeholder="">
+                            </div>
                             <div class="form-group">
                                 <label class="form-label">Tanggal Pengeluaran</label>
                                 <input type="date" class="form-control" value="" name="tanggal_pengeluaran" placeholder="">
                             </div>
-
+                            <div class="form-group">
+                                <label class="form-label">nominal harga</label>
+                                <input type="text" class="form-control" value="" name="nominal" placeholder="" readonly>
+                            </div>
                             <div class="form-group">
                                 <label class="form-label">Sisa Iuran Warga</label>
                                 <input type="text" class="form-control" value="" name="sisa" placeholder="" readonly>
@@ -55,8 +60,6 @@
         </div>
     </div>
 </div>
-
-
 
 <!-- [ Main Content ] start -->
 <div class="pcoded-main-container">
@@ -85,7 +88,6 @@
             <!-- [ sample-page ] start -->
             <div class="col-sm-12">
                 <div class="card">
-
                     <div class="card-header">
                         <h5>Data Pengeluaran</h5>
                         <button type="button" class="float-right btn btn-primary btn btn-primary float-right mb-2" onclick="add()">
@@ -99,139 +101,179 @@
             </div>
             <!-- [ sample-page ] end -->
         </div>
-
         <!-- [ Main Content ] end -->
-        <script>
-            $(document).ready(function() {
-                tabel()
+    </div>
+</div>
+
+<script>
+$(document).ready(function() {
+    $('[name=jumlah]').on('input', hitungNominal);
+    $('[name=harga]').on('input', hitungNominal);
+    $('[name=nominal]').on('input', hitungSisa);
+    tabel();
+});
+
+function hitungNominal() {
+    var harga = parseFloat($('[name=harga]').val().replace(/[^0-9.-]+/g,""));
+    var jumlah = parseFloat($('[name=jumlah]').val().replace(/[^0-9.-]+/g,""));
+    var nominal = harga * jumlah;
+
+    if (!isNaN(nominal)) {
+        $('[name=nominal]').val(nominal.toFixed(2));
+    }
+
+    hitungSisa();
+}
+
+function hitungSisa() {
+    var nominalPengeluaran = parseFloat($('[name=nominal]').val());
+    var nominalIuran = parseFloat($('[name=sisa]').val());
+    var sisa = nominalIuran - nominalPengeluaran;
+
+    if (nominalPengeluaran > nominalIuran) {
+        $('#exampleModal').modal('hide');
+        swal.fire({
+            icon: 'warning',
+            title: '',
+            text: 'Nominal Pengeluaran tidak boleh melebihi Sisa Budget'
+        });
+    }
+
+    if (!isNaN(sisa)) {
+        $('[name=sisa]').val(sisa.toFixed(2));
+    }
+}
+
+
+    function tabel() {
+        $.ajax({
+            url: "<?= base_url() ?>pengeluaran/tabel",
+            method: "POST",
+            beforeSend: function() {},
+            success: function(data) {
+                $('.tabel').html(data);
+            },
+            error: function() {}
+        });
+    }
+
+    function add() {
+        $('#exampleModal').attr('hidden', false);
+        $('#formModal')[0].reset();
+        $('[name=type_save]').val('add');
+        $('[name=id]').val('');
+        $('#exampleModal').modal('show');
+        $('.modal-title').text('Tambah Data Pengeluaran');
+        $('#btnSave').text('Tambah Data Pengeluaran');
+        cekNominal();
+    }
+
+    function edit(id) {
+        $('#formModal')[0].reset();
+        $('[name=type_save]').val('edit');
+        $('#exampleModal').modal('show');
+        $('.modal-title').text('Ubah Data Pengeluaran');
+        $('#btnSave').text('Ubah Data Pengeluaran');
+        cekNominal();
+        $.ajax({
+            url: "<?= base_url('pengeluaran/edit/') ?>" + id,
+            type: "POST",
+            dataType: "JSON",
+            beforeSend: function() {},
+            success: function(data) {
+                $('[name=id]').val(data.id);
+                $('[name=nama]').val(data.nama);
+                $('[name=nominal]').val(data.nominal);
+                $('[name=keterangan]').val(data.keterangan);
+                $('[name=tanggal_pengeluaran]').val(data.tanggal_pengeluaran);
+            },
+            error: function() {}
+        });
+    }
+
+    function save() {
+        var harga = parseFloat($('[name=harga]').val());
+        var jumlah = parseFloat($('[name=jumlah]').val());
+        var nominal = harga * jumlah;
+
+        $('[name=nominal]').val(nominal.toFixed(2));
+
+        var nominalPengeluaran = $('[name=nominal]').val();
+        var nominalIuran = $('[name=sisa]').val();
+
+        if (nominalPengeluaran > nominalIuran) {
+            $('#exampleModal').modal('hide');
+            swal.fire({
+                icon: 'warning',
+                title: '',
+                text: 'Nominal Pengeluaran tidak boleh melebihi Sisa Budget'
+            });
+        } else {
+            var form = $('#formModal');
+            form.validate({
+                rules: {
+                    nama: {
+                        required: true,
+                    },
+                    keterangan: {
+                        required: true,
+                    },
+                    nominal: {
+                        required: true,
+                        number: true,
+                    },
+                    tanggal_pengeluaran: {
+                        required: false,
+                        date: true,
+                    },
+                },
+                messages: {}
             });
 
-            function tabel() {
-                $.ajax({
-                    url: "<?= base_url(); ?>pengeluaran/tabel",
-                    method: "POST",
-                    beforeSend: function() {},
-                    success: function(data) {
-                        $('.tabel').html(data)
-                    },
-                    error: function() {}
-                });
-            }
+            if (form.valid()) {
+                var formData = new FormData($('#formModal')[0]);
 
-            function add() {
-                $('#exampleModal').attr('hidden', false)
-                $('#formModal')[0].reset();
-                $('[name=type_save]').val('add');
-                $('[name=id]').val('');
-                $('#exampleModal').modal('show');
-                $('.modal-title').text('Tambah Data Pengeluaran');
-                $('#btnSave').text('Tambah Data Pengeluaran');
-                cekNominal()
-            }
-
-            function edit(id) {
-                $('#formModal')[0].reset();
-                $('[name=type_save]').val('edit');
-                $('#exampleModal').modal('show');
-                $('.modal-title').text('Ubah Data Pengeluaran');
-                $('#btnSave').text('Ubah Data Pengeluaran');
-                cekNominal();
                 $.ajax({
-                    url: "<?= base_url('pengeluaran/edit/') ?>" + id,
+                    url: '<?= base_url('pengeluaran/add') ?>',
                     type: "POST",
-                    dataType: "JSON",
-                    beforeSend: function() {},
+                    data: formData,
+                    contentType: false,
+                    processData: false,
+                    dataType: "json",
                     success: function(data) {
-                        $('[name=id]').val(data.id)
-                        $('[name=nama]').val(data.nama)
-                        $('[name=nominal]').val(data.nominal)
-                        $('[name=keterangan]').val(data.keterangan)
-                        $('[name=tanggal_pengeluaran]').val(data.tanggal_pengeluaran)
+                        $('#exampleModal').modal('hide');
+
+                        if (data.status == true) {
+                            swal.fire({
+                                icon: 'success',
+                                title: 'Save Data',
+                                text: 'Saving Data'
+                            });
+                            tabel();
+                        } else if (data.status == false) {
+                            swal.fire({
+                                icon: 'warning',
+                                title: 'Terjadi Kesalahan',
+                                text: 'Harap Hubungi Admin'
+                            });
+                        }
                     },
-                    error: function() {}
+                    error: function(jqXHR, textStatus, errorwhrown) {}
                 });
             }
+        }
+    }
 
-            function save() {
-                var nominalPengeluaran = $('[name=nominal]').val();
-                var nominalIuran = $('[name=sisa]').val();
-                if (nominalPengeluaran > nominalIuran) {
-                    $('#exampleModal').modal('hide');
-                    swal.fire({
-                        icon: 'warning',
-                        title: '',
-                        text: 'Nominal Pengeluarn tidak boleh melebihi Sisa Budget'
-                        // + data.nomor_item
-                    });
-
-                } else {
-                    var form = $('#formModal');
-                    form.validate({
-                        rules: {
-                            nama: {
-                                required: true,
-                            },
-                            keterangan: {
-                                required: true,
-                            },
-                            nominal: {
-                                required: true,
-                                number: true,
-                            },
-                            tanggal_pengeluaran: {
-                                required: false,
-                                date: true,
-
-                            },
-                        },
-                        messages: {}
-                    });
-                    if (form.valid()) {
-                        var formData = new FormData($('#formModal')[0]);
-                        $.ajax({
-                            url: '<?= base_url('pengeluaran/add') ?>',
-                            type: "POST",
-                            data: formData,
-                            contentType: false,
-                            processData: false,
-                            dataType: "json",
-                            success: function(data) {
-                                $('#exampleModal').modal('hide');
-                                if (data.status == true) {
-                                    swal.fire({
-                                        icon: 'success',
-                                        title: 'Save Data',
-                                        text: 'Saving Data '
-                                        // + data.nomor_item
-                                    });
-                                    tabel();
-
-                                } else if (data.status == false) {
-                                    swal.fire({
-                                        icon: 'warning',
-                                        title: 'Terjadi Kesalahan',
-                                        text: 'Harap Hubungi Admin'
-                                    });
-                                }
-                            },
-                            error: function(jqXHR, textStatus, errorwhrown) {}
-                        });
-                    }
-                }
-
-            }
-
-            function cekNominal() {
-                $.ajax({
-                    url: "<?= base_url('pengeluaran/cekIuran') ?>",
-                    type: "POST",
-                    dataType: "JSON",
-                    beforeSend: function() {},
-                    success: function(data) {
-                        $('[name=sisa]').val(data)
-                    },
-                    error: function() {}
-                });
-            }
-        </script>
-        <?php $this->load->view('template/footer.php'); ?>
+    function cekNominal() {
+        $.ajax({
+            url: "<?= base_url('pengeluaran/cekIuran') ?>",
+            type: "POST",
+            dataType: "JSON",
+            beforeSend: function() {},
+            success: function(data) {
+                $('[name=sisa]').val(data);
+            },
+            error: function() {}
+        });
+    }
+</script>

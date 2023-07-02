@@ -1,3 +1,26 @@
+<?php
+if ($_SERVER['REQUEST_METHOD'] == 'POST') {
+    // Periksa apakah file berhasil diunggah
+    if (
+        isset($_FILES['gambar']) &&
+        $_FILES['gambar']['error'] === UPLOAD_ERR_OK
+    ) {
+        $nama_file = $_FILES['gambar']['name'];
+        $tmp_file = $_FILES['gambar']['tmp_name'];
+
+        $tujuan = FCPATH . 'assets/bukti/' . rawurlencode($nama_file);
+
+        // Pindahkan file yang diunggah ke folder tujuan
+        if (move_uploaded_file($tmp_file, $tujuan)) {
+            echo 'File berhasil diunggah.';
+        } else {
+            echo 'Gagal mengunggah file.';
+        }
+    } else {
+        echo 'Terjadi kesalahan dalam unggah file.';
+    }
+} ?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -16,7 +39,9 @@
     <title>Sistem Informasi Perumahan villa Indah Ciwidey</title>
 
     <link href="<?= base_url('assets/static/') ?>css/app.css" rel="stylesheet">
-    <link href="<?= base_url('assets/') ?>js/sweetalert2.min.css" rel="stylesheet">
+    <link href="<?= base_url(
+        'assets/'
+    ) ?>js/sweetalert2.min.css" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
 
     <style>
@@ -31,12 +56,14 @@
         background-image: url("<?= base_url('assets/images/perum2.jpg') ?>");
         background-size: cover;
     }
-</style>
+    </style>
 
 </head>
 
 <body>
-    <div class="flash-data" data-flashdata="<?= $this->session->flashdata('notif'); ?>"></div>
+    <div class="flash-data" data-flashdata="<?= $this->session->flashdata(
+        'notif'
+    ) ?>"></div>
     <main class="d-flex w-100">
         <div class="container d-flex flex-column">
             <div class="row vh-100">
@@ -79,6 +106,15 @@
 
                         <div class="card mt-4">
     <div class="card-body">
+        <form action="<?= base_url(
+            'auth/upload_bukti'
+        ) ?>" method="post" enctype="multipart/form-data">
+            <div class="text-center">Upload bukti pembayaran</div>
+            <input type="text" class="form-control" placeholder="Nomor Kartu keluarga" name="no_kk">
+            <label class="btn btn-info" for="gambar">Upload Gambar:</label>
+            <input type="file" id="gambar" name="gambar">
+            <input type="submit" class="btn mr-1 ml-1 btn-lg btn-success" value="Kirim">
+        </form>
         <div class="text-center">
             <h5>Hubungi Narahubung melalui WhatsApp</h5>
             <p>
@@ -92,6 +128,7 @@
 </div>
 
 
+
                     </div>
                 </div>
             </div>
@@ -99,7 +136,9 @@
     </main>
 
     <script src="<?= base_url('assets/static/') ?>js/app.js"></script>
-    <script src="<?= base_url('assets/plugins/jquery/') ?>jquery.min.js"></script>
+    <script src="<?= base_url(
+        'assets/plugins/jquery/'
+    ) ?>jquery.min.js"></script>
 
     <script src="<?= base_url('assets/') ?>js/sweetalert2.all.min.js"></script>
     <script>
@@ -141,6 +180,39 @@
                 error: function () { }
             });
         }
+        function uploadBukti() {
+        // make form can upload ke tbl_bukti lewat controler auth/bukti
+        var no_kk = $('[name=no_kk]').val();
+        var gambar = $('[name=gambar]').val();
+       $.ajax({
+            url: "<?= base_url('auth/bukti') ?>",
+            type: "POST",
+            data: {
+                no_kk,
+                gambar
+            },
+            dataType: "JSON",
+            beforeSend: function () { },
+            success: function (data) {
+                if (data.status == false) {
+                    Swal.fire({
+                        icon: 'error',
+                        title: 'Nomor kartu keluarga tersebut tidak ada',
+                        text: '',
+                    })
+                } else if (data.status == true) {
+
+                    Swal.fire({
+                        icon: 'success',
+                        title: 'Silahkan pilih Tahun dan bulan pembayaran',
+                        text: '',
+                    });
+                    $('#cekPembayaran').html(data.html);
+                }
+            },
+            error: function () { }
+        });
+    }
     </script>
 </body>
 

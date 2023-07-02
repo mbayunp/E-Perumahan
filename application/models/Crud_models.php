@@ -1,6 +1,5 @@
 <?php
 
-
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class Crud_models extends CI_Model
@@ -34,16 +33,35 @@ class Crud_models extends CI_Model
 
     function counter_number($table, $idtable)
     {
-        $q = $this->db->query("SELECT MAX((" . $idtable . ")) AS idmax FROM " . $table . " where status_id = '1'");
+        $q = $this->db->query(
+            'SELECT MAX((' .
+                $idtable .
+                ')) AS idmax FROM ' .
+                $table .
+                " where status_id = '1'"
+        );
 
-        $kd = ""; //kode awal
-        if ($q->num_rows() > 0) { //jika data ada
+        $kd = ''; //kode awal
+        if ($q->num_rows() > 0) {
+            //jika data ada
             foreach ($q->result() as $k) {
-                $kd = ((int)$k->idmax) + 1; //string kode diset ke integer dan ditambahkan 1 dari kode terakhir
+                $kd = ((int) $k->idmax) + 1; //string kode diset ke integer dan ditambahkan 1 dari kode terakhir
             }
-        } else { //jika data kosong diset ke kode awal
-            $kd = "1";
+        } else {
+            //jika data kosong diset ke kode awal
+            $kd = '1';
         }
         return $kd;
+    }
+    public function get_by_id($table, $id)
+    {
+        $this->db->where('id', $id);
+        return $this->db->get($table)->row();
+    }
+    public function get_by_column($table, $column, $value)
+    {
+        $this->db->where($column, $value);
+        $query = $this->db->get($table);
+        return $query->row();
     }
 }

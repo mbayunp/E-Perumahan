@@ -31,7 +31,6 @@ class Warga extends CI_Controller
 		$data = [
 			'nama' => $post['nama'],
 			'nomor_nik_ktp' => $post['nomor_nik_ktp'],
-			'nomor_kk' => $post['nomor_kk'],
 			'nomor_telepon' => $post['nomor_telepon'],
 			'nomor_rumah' => $post['nomor_rumah'],
 			'alamat' => $post['alamat'],

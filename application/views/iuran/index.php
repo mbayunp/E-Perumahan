@@ -40,7 +40,9 @@
                             </div>
                             <div class="form-group">
                                 <label class="form-label">Nominal Iuran</label>
-                                <input type="text" class="form-control" value="<?= uang($nominalIuran) ?>" name="nominal_iuran" disabled>
+                                <input type="text" class="form-control" value="<?= uang(
+                                    $nominalIuran
+                                ) ?>" name="nominal_iuran" disabled>
                             </div>
 
 
@@ -118,7 +120,7 @@
 
             function tabel() {
                 $.ajax({
-                    url: "<?= base_url(); ?>iuran/tabel",
+                    url: "<?= base_url() ?>iuran/tabel",
                     method: "POST",
                     beforeSend: function() {},
                     success: function(data) {
