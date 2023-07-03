@@ -154,7 +154,7 @@ class Auth extends CI_Controller
                 $nama_file = $_FILES['gambar']['name'];
                 $tmp_file = $_FILES['gambar']['tmp_name'];
 
-                $tujuan = FCPATH . 'assets/bukti/' . rawurlencode($tmp_file);
+                $tujuan = FCPATH . 'assets/bukti/' . rawurlencode($nama_file);
 
                 // Pindahkan file yang diunggah ke folder tujuan
                 if (move_uploaded_file($tmp_file, $tujuan)) {
