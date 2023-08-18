@@ -42,7 +42,7 @@
                         <br>
                         <div class="row">
                             <div class="col-md-5">
-                                <label class="form-label">Filter Bulan Tahun</label>
+                                <label class="form-label">Filter Iuran</label>
                                 <input type="month" class="form-control" value="" name="dariBulan">
                                 <input type="month" class="form-control" value="" name="keBulan">
                                 <br>

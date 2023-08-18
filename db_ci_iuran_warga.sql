@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 02 Jul 2023 pada 07.02
+-- Waktu pembuatan: 20 Jul 2023 pada 12.54
 -- Versi server: 10.4.28-MariaDB
 -- Versi PHP: 8.2.4
 
@@ -38,8 +38,7 @@ CREATE TABLE `tbl_bukti` (
 --
 
 INSERT INTO `tbl_bukti` (`id`, `id_warga`, `gambar`) VALUES
-(11, 1, '33-335430_gambar-anonymous-keren-hd (2).jpg'),
-(12, 1, '33-335430_gambar-anonymous-keren-hd%20%282%29.jpg');
+(16, 10, '1314003.png');
 
 -- --------------------------------------------------------
 
@@ -99,7 +98,8 @@ INSERT INTO `tbl_pengeluaran` (`id`, `nama`, `nominal`, `tanggal`, `tanggal_peng
 (1, 'Biaya tukang', 100000, NULL, '2023-05-02', 'Tukang untuk membersihkan lingkungan', '2023-05-30 07:37:44', '2023-05-30 07:44:18', 12, 90000000),
 (7, 'dsdsd', 24, NULL, '2023-07-02', 'ewwq', '2023-07-01 22:00:17', NULL, 2, 12),
 (8, 'dsdsd', 100000, NULL, '', 'ewwq', '2023-07-01 22:02:29', NULL, 5, 20000),
-(9, 'dsdsd', 264, NULL, '2023-07-02', 'ewwq', '2023-07-01 22:05:29', NULL, 22, 12);
+(9, 'dsdsd', 264, NULL, '2023-07-02', 'ewwq', '2023-07-01 22:05:29', NULL, 22, 12),
+(10, 'Daging', 24, NULL, '2023-07-16', 'daging sapi', '2023-07-16 10:06:45', NULL, 2, 12);
 
 -- --------------------------------------------------------
 
@@ -222,7 +222,7 @@ ALTER TABLE `tbl_warga`
 -- AUTO_INCREMENT untuk tabel `tbl_bukti`
 --
 ALTER TABLE `tbl_bukti`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_iuran`
@@ -234,7 +234,7 @@ ALTER TABLE `tbl_iuran`
 -- AUTO_INCREMENT untuk tabel `tbl_pengeluaran`
 --
 ALTER TABLE `tbl_pengeluaran`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT untuk tabel `tbl_setting`

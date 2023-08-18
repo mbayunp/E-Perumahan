@@ -8,7 +8,7 @@
             <th>Iuran Bulan</th>
             <th>Nominal Iuran</th>
             <th>Status</th>
-            <th>Action</th>
+            <th>Aksi</th>
             <th>Tagih</th>
         </tr>
     </thead>

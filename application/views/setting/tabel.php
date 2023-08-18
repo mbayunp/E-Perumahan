@@ -3,10 +3,10 @@
     <thead>
         <tr>
             <th>No</th>
-            <th>Action</th>
+            <th>Aksi</th>
             <th>Nominal</th>
-            <th>Type</th>
-            <th>Update</th>
+            <th>Tipe</th>
+            <th>Diperbaharui</th>
         </tr>
     </thead>
     <tbody>
